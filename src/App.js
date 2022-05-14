@@ -1,10 +1,10 @@
-import Api from './Components/Api';
+import Banner from './Components/Banner';
 
 
 function App() {
   return (
     <div className="App">
-      <Api/>
+      <Banner/>
         
     </div>
   );
