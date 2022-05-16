@@ -7,8 +7,8 @@ function App() {
     <div className="App">
       <Navbar/>
       <Banner/>
-      <RowPost/>
-           
+      <RowPost title="Netflix Originals"/>
+      <RowPost title="Action Movies" isSmall/>     
     </div>
   );
 }
