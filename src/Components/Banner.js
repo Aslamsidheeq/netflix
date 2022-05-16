@@ -23,7 +23,7 @@ function Banner() {
         <h2>{movie.title }</h2>
         <p>{movie.overview}</p>
         <img id="pic" src={imageUrl+movie.backdrop_path} alt=""></img>
-        <img id="pic" src={imageUrl+movie.poster_path} alt=""></img>
+        {/* <img id="pic" src={imageUrl+movie.poster_path} alt=""></img> */}
         </div>
   )
 }
