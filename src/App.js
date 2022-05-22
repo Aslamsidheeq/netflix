@@ -8,7 +8,7 @@ function App() {
       <Navbar/>
       <Banner/>
       <RowPost title="Netflix Originals" url={originals} />
-      <RowPost title="Action Movies" isSmall url={action}/>     
+      <RowPost title="Action Movies" isSmall url={action}/>   
     </div>
   );
 }
