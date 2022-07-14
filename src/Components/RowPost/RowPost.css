@@ -1,5 +1,5 @@
 .row{
-    margin-left: 20px;
+    margin-left: 30px;
     color: rgb(255, 255, 255);
 }
 
@@ -8,6 +8,7 @@
     padding: 20px;
     overflow-x: scroll;
     overflow-y: hidden;
+    gap: 10px;
 
 }
 
@@ -20,15 +21,17 @@
     max-height: 250px;
     margin-right:10px ;
     cursor: pointer;
+    border-radius: 15px;
 }
 
 .smallPoster{
     max-height: 150px;
     margin-right: 10px;
     cursor: pointer;
+    border-radius: 10px;
 }
 .poster:hover{
-    transform: scale(1.2);
+    transform: scale(1.1);
     transition-duration: 0.5s;
 }
 .smallPoster:hover{
