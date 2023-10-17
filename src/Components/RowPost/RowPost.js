@@ -8,29 +8,41 @@ function RowPost(props){
 
   const [movies,setMovie] = useState([])
   const [isOpen,setIsOpen]= useState(false)
-  const [pic, setpic] = useState([])
+  const [elements, setElements] = useState()
 
-    useEffect(() => {
-      axios.get(props.url).then(response=>{
-        // console.log(response.data.results)
-        setMovie(response.data.results)
-      })
-    },)
+  function showPopUp(current){
+    setElements(current)
+    console.log("current",current)
+    setIsOpen(true)
+  }
+
+  useEffect(() => {
+    axios.get(props.url).then(response=>{
+      // console.log(response.data.results)
+      setMovie(response.data.results)
+    })
+  },[props.url])
     
     return(
-    <div className='row'>
+      <>
+    <div className='row' style={{ position: 'relative' }}>
         <h2>{props.title}</h2>
         <div className='posters'>
-
-          {movies.map((obj)=>
-          //single elemnt - no need of return statement and curly braces
-          <div><img onClick={()=>{setIsOpen(true)}} className={props.isSmall? 'smallPoster':'poster'} alt="error" src={`${imageUrl+obj.backdrop_path}`}></img>
-          <h3>{obj.name}</h3>
-          <PopUp pic={obj.backdrop_path} open={isOpen}/>
-          </div>)
-          }
+        {movies.map((obj)=>
+          <div>
+            <img alt="error"
+              onClick={()=> {showPopUp(obj)} }
+              className={props.isSmall? 'smallPoster':'poster'} 
+              src={`${imageUrl+obj.backdrop_path}`}>
+            </img>
+          </div>
+        )}
         </div>
     </div>
+    <div style={{ position: 'absolute', top: 0, left: 0, zIndex: 1 }}>
+    <PopUp open={isOpen} elements={elements} />
+    </div>
+    </>
 )}
 
 

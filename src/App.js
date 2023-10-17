@@ -7,7 +7,7 @@ function App() {
     <div className="App">
       <Navbar/>
       <Banner/>
-      <RowPost title="Netflix Originals"url={originals} />
+      <RowPost title="Netflix Originals" url={originals} />
       <RowPost title="Action Movies" isSmall url={action}/>   
     </div>
   );

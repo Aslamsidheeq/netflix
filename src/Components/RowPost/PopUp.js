@@ -2,15 +2,14 @@ import React from 'react'
 import {imageUrl} from '../constants/constants';
 import './RowPost.css';
 
-function PopUp({open,pic}) {
+function PopUp({open,elements}) {
   if(!open) return null
-  {console.log(pic)}
+  console.log("elem at Pop",elements)
   return (
-    
     <div>
-      <div><img className='poster' alt="error" src={`${imageUrl+pic}`}></img>
-      <h3>{pic.name}</h3></div>
-      
+      <img className='smallPoster' src={`${imageUrl+elements.backdrop_path}`} alt='error'/>
+      <h3>{elements.name}</h3>
+      <p>{elements.overview}</p>
     </div>
   )
 }
