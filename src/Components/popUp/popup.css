@@ -1,0 +1,16 @@
+.smallPoster{
+    max-height: 150px;
+    margin-right: 10px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+.popup-container{
+    background-color: black;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    padding: 5%;
+}
+.text{
+    padding: 10%;
+}

@@ -1,5 +1,5 @@
-import Banner from './Components/Banner';
-import Navbar from './Components/Navbar';
+import Banner from './Components/banner/Banner';
+import Navbar from './Components/navbar/Navbar';
 import RowPost from './Components/RowPost/RowPost';
 import {originals,action} from './urls'
 function App() {

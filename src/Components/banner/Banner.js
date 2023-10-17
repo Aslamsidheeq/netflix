@@ -1,8 +1,8 @@
-import '../Components/banner.css'
+import './banner.css'
 import React, { useState } from 'react'
 import { useEffect } from 'react';
-import axios from '../../src/Components/axios'
-import { API_KEY,imageUrl } from './constants/constants';
+import axios from '../axios'
+import { API_KEY,imageUrl } from '../constants/constants';
 
 
 function Banner() {
@@ -18,7 +18,7 @@ function Banner() {
     }, []);
 
   return (
-    <div className="banner_div">
+    <div className="banner-div">
         <h2>Trending: {movie.title }</h2>
         <p>{movie.overview}</p>
         <img id="pic" src={imageUrl+movie.backdrop_path} alt=""></img>

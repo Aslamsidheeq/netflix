@@ -2,7 +2,7 @@ import React,{useState,useEffect} from 'react';
 import './RowPost.css';
 import axios from '../../Components/axios';
 import {imageUrl} from '../constants/constants';
-import PopUp from './PopUp'
+import PopUp from '../popUp/PopUp'
 
 function RowPost(props){
 
@@ -12,7 +12,7 @@ function RowPost(props){
 
   function showPopUp(current){
     setElements(current)
-    console.log("current",current)
+    // console.log("current",current)
     setIsOpen(true)
   }
 
@@ -28,8 +28,8 @@ function RowPost(props){
     <div className='row' style={{ position: 'relative' }}>
         <h2>{props.title}</h2>
         <div className='posters'>
-        {movies.map((obj)=>
-          <div>
+        {movies.map((obj,id)=>
+          <div key={id}>
             <img alt="error"
               onClick={()=> {showPopUp(obj)} }
               className={props.isSmall? 'smallPoster':'poster'} 
@@ -40,7 +40,7 @@ function RowPost(props){
         </div>
     </div>
     <div style={{ position: 'absolute', top: 0, left: 0, zIndex: 1 }}>
-    <PopUp open={isOpen} elements={elements} />
+    <PopUp open={isOpen} elements={elements} setIsOpen={setIsOpen} />
     </div>
     </>
 )}
