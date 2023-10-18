@@ -4,9 +4,7 @@ import { useEffect } from 'react';
 import axios from '../axios'
 import { API_KEY,imageUrl } from '../constants/constants';
 
-
 function Banner() {
-
 
   const [movie, setMovie] = useState([])
     useEffect(() => {
@@ -22,7 +20,6 @@ function Banner() {
         <h2>Trending: {movie.title }</h2>
         <p>{movie.overview}</p>
         <img id="pic" src={imageUrl+movie.backdrop_path} alt=""></img>
-        {/* <img id="pic" src={imageUrl+movie.poster_path} alt=""></img> */}
         </div>
   )
 }

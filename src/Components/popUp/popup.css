@@ -14,3 +14,7 @@
 .text{
     padding: 10%;
 }
+.text-container{
+    display: block;
+    align-items: center;
+}

@@ -1,18 +1,17 @@
-import React,{useState,useEffect} from 'react';
+import React,{useState,useEffect, useContext} from 'react';
 import './RowPost.css';
 import axios from '../../Components/axios';
 import {imageUrl} from '../constants/constants';
 import PopUp from '../popUp/PopUp'
+import PopUpContext from '../context'
 
 function RowPost(props){
-
+  const {setIsOpen,setElements,elements}=useContext(PopUpContext)
   const [movies,setMovie] = useState([])
-  const [isOpen,setIsOpen]= useState(false)
-  const [elements, setElements] = useState()
 
   function showPopUp(current){
     setElements(current)
-    // console.log("current",current)
+    console.log("current",current)
     setIsOpen(true)
   }
 
@@ -40,7 +39,7 @@ function RowPost(props){
         </div>
     </div>
     <div style={{ position: 'absolute', top: 0, left: 0, zIndex: 1 }}>
-    <PopUp open={isOpen} elements={elements} setIsOpen={setIsOpen} />
+    <PopUp elements={elements} />
     </div>
     </>
 )}
